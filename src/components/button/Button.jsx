@@ -5,24 +5,24 @@ const Button = props => {
   return (
     <button
       className={`btn ${props.className}`}
-      onCLick={props.onCLick ? () => props.onCLick() : null}
+      onClick={props.onClick ? () => props.onClick() : null}
     >
       {props.children}
     </button>
   )
 }
-const OutlineButton = props => {
+export const OutlineButton = props => {
   return (
     <Button
       className={`btn-outline ${props.className}`}
-      onCLick={props.onCLick ? () => props.onCLick() : null}
+      onClick={props.onClick ? () => props.onClick() : null}
     >
       {props.children}
     </Button>
   )
 }
 Button.propTypes = {
-  onCLick: PropTypes.func
+  onClick: PropTypes.func
 }
 
 export default Button
