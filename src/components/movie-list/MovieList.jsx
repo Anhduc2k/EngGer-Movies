@@ -4,7 +4,7 @@ import './movie-list.scss'
 import SwiperCore, { Autoplay } from 'swiper'
 import tmdbApi, { category } from '../../api/tmdbApi'
 import { SwiperSlide, Swiper } from 'swiper/react'
-import apiConfig from '../../api/apiConfig'
+import MovieCard from '../movie-card/MovieCard'
 
 function MovieList(props) {
   SwiperCore.use([Autoplay])
@@ -41,7 +41,7 @@ function MovieList(props) {
       >
         {items.map((item, i) => (
           <SwiperSlide key={i}>
-            <img src={apiConfig.w500Image(item.poster_path)} alt="" />
+            <MovieCard item={item} category={props.category} />
           </SwiperSlide>
         ))}
       </Swiper>
