@@ -29,7 +29,7 @@ function MovieList(props) {
       setItems(response.results.reverse())
     }
     getList()
-  }, [])
+  }, [props.id, props.type, props.category])
   return (
     <div className="movie-list">
       <Swiper
